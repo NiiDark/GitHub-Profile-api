@@ -6,7 +6,6 @@ function Form({ getSearchValue }) {
 
    const handleSubmite = (e) => {
       e.preventDefault();
-      console.log('submiting');
       getSearchValue(search);
       setsearch('');
    };

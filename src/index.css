@@ -22,3 +22,7 @@ code {
    justify-content: center;
    flex-direction: column;
 }
+
+a {
+   text-decoration: none;
+}
