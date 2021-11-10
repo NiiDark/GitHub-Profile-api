@@ -277,7 +277,8 @@ export const Looking = styled.div`
    justify-content: center;
 
    h2 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-size: 1.75rem;
       font-weight: 600;
       text-align: center;
@@ -293,7 +294,8 @@ export const UserNotFound = styled.div`
    justify-content: center;
 
    h2 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-size: 1.75rem;
       font-weight: 600;
       text-align: center;

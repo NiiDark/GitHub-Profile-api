@@ -87,7 +87,7 @@ function GitHubInfo({ isDarkMode }) {
          <Wrapper isDarkMode={isDarkMode}>
             <Container>
                {loading ? (
-                  <Looking>
+                  <Looking isDarkMode={isDarkMode}>
                      <img src="/three-dots.svg" width="60" alt="" />
                   </Looking>
                ) : (
