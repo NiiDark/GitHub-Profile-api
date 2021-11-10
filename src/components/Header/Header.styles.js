@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const HeaderLogo = styled.h1`
-   color: #fff;
+   color: ${(props) => (props.isDarkMode ? '#fff' : '#000')};
    font-weight: 600;
    font-size: 1.75rem;
 `;
@@ -18,7 +18,7 @@ export const HeaderBtn = styled.button`
    cursor: pointer;
    background-color: transparent;
    border: none;
-   color: #fff;
+   color: ${(props) => (props.isDarkMode ? '#fff' : '#000')};
    font-size: 1.1rem;
    font-family: 'Red Hat Mono';
    display: flex;

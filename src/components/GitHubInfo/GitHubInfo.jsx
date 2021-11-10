@@ -23,7 +23,12 @@ import {
    UserNotFound,
 } from './GitHubInfo.styles';
 
-function GitHubInfo() {
+import LocationSVG from '../SVGs/LocationSVG';
+import TwitterSVG from '../SVGs/TwitterSVG';
+import CompanySVG from '../SVGs/CompanySvg';
+import WebsiteSVG from '../SVGs/WebSiteSvg';
+
+function GitHubInfo({ isDarkMode }) {
    const [searchValue, setSearchValue] = useState('');
    const [userInfo, setUserInfo] = useState({});
    const [notFound, setNotFound] = useState(true);
@@ -78,8 +83,8 @@ function GitHubInfo() {
    const joinDate = new Date(created_at);
    return (
       <>
-         <Form getSearchValue={getSearchValue} />
-         <Wrapper>
+         <Form isDarkMode={isDarkMode} getSearchValue={getSearchValue} />
+         <Wrapper isDarkMode={isDarkMode}>
             <Container>
                {loading ? (
                   <Looking>
@@ -88,7 +93,7 @@ function GitHubInfo() {
                ) : (
                   <>
                      {notFound ? (
-                        <UserNotFound>
+                        <UserNotFound isDarkMode={isDarkMode}>
                            <h2>
                               {firstLoad
                                  ? 'Enter a GitHub username to search for the user profile.'
@@ -101,7 +106,7 @@ function GitHubInfo() {
                               <Avatar>
                                  <img src={avatar_url} alt="avatar" />
                               </Avatar>
-                              <Name name={name}>
+                              <Name name={name} isDarkMode={isDarkMode}>
                                  <div className="wrapper">
                                     <h2>{ProfileName}</h2>
 
@@ -118,39 +123,48 @@ function GitHubInfo() {
                                  </h3>
                               </Name>
                            </MainInfo>
-                           <Bio>{ProfileBio}</Bio>
-                           <Statistics>
-                              <Repos>
+                           <Bio isDarkMode={isDarkMode}>{ProfileBio}</Bio>
+                           <Statistics isDarkMode={isDarkMode}>
+                              <Repos isDarkMode={isDarkMode}>
                                  <h3>Repos</h3>
                                  <h4>{public_repos}</h4>
                               </Repos>
-                              <Followers>
+                              <Followers isDarkMode={isDarkMode}>
                                  <h3>Followers</h3>
                                  <h4>{followers}</h4>
                               </Followers>
-                              <Following>
+                              <Following isDarkMode={isDarkMode}>
                                  <h3>Following</h3>
                                  <h4>{following}</h4>
                               </Following>
                            </Statistics>
                            <More>
                               <LBWrapper>
-                                 <Location location={location}>
-                                    <img src="/location.svg" alt="" />
+                                 <Location
+                                    isDarkMode={isDarkMode}
+                                    location={location}
+                                 >
+                                    <LocationSVG />
                                     <h3>{ProfileLocation}</h3>
                                  </Location>
-                                 <Blog blog={blog}>
-                                    <img src="/blog.svg" alt="" />
+                                 <Blog isDarkMode={isDarkMode} blog={blog}>
+                                    <WebsiteSVG />
                                     <h3>{ProfileBlog}</h3>
                                  </Blog>
                               </LBWrapper>
                               <TCWrapper>
-                                 <Twitter twitter={twitter_username}>
-                                    <img src="/twitter.svg" alt="" />
+                                 <Twitter
+                                    isDarkMode={isDarkMode}
+                                    twitter={twitter_username}
+                                 >
+                                    <TwitterSVG />
                                     <h3>{ProfileTwitter}</h3>
                                  </Twitter>
-                                 <Company company={company}>
-                                    <img src="/company.svg" alt="" />
+                                 <Company
+                                    isDarkMode={isDarkMode}
+                                    company={company}
+                                 >
+                                    <CompanySVG />
                                     <h3>{ProfileCompany}</h3>
                                  </Company>
                               </TCWrapper>

@@ -7,7 +7,8 @@ export const FormContainer = styled.form`
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: rgba(31, 42, 72, 1);
+   background-color: ${(props) =>
+      props.isDarkMode ? 'rgba(31, 42, 72, 1)' : 'rgba(240, 240, 240, 1)'};
    border-radius: 10px;
    min-height: 70px;
 `;
@@ -32,7 +33,7 @@ export const FormInput = styled.input`
    height: 80%;
    font-size: 1.1rem;
    font-family: 'Red Hat Mono';
-   color: #fff;
+   color: ${(props) => (props.isDarkMode ? '#fff' : '#000')};
    background-color: transparent;
    border: none;
    margin: 0 0.5rem;
@@ -41,7 +42,8 @@ export const FormInput = styled.input`
    }
 
    &::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)'};
    }
 `;
 

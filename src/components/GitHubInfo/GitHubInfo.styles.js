@@ -14,7 +14,8 @@ export const Wrapper = styled.main`
    border-radius: 10px;
    width: 96%;
    max-width: 800px;
-   background-color: rgba(31, 42, 72, 1);
+   background-color: ${(props) =>
+      props.isDarkMode ? 'rgba(31, 42, 72, 1)' : 'rgba(240, 240, 240, 1)'};
    display: flex;
    align-items: center;
    justify-content: center;
@@ -60,7 +61,8 @@ export const Name = styled.div`
       }
 
       h2 {
-         color: white;
+         color: ${(props) =>
+            props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
          font-size: 1.5rem;
          font-weight: 600;
          margin: 0.5rem 0;
@@ -77,8 +79,9 @@ export const Name = styled.div`
 
    h3 {
       align-self: flex-start;
-      color: white;
-      opacity: 0.6;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
+      opacity: ${(props) => (props.isDarkMode ? '0.6' : '0.9')};
       font-size: 1rem;
       font-weight: 400;
       margin: 0.95rem 0;
@@ -87,7 +90,8 @@ export const Name = styled.div`
 
 export const Bio = styled.p`
    margin-top: 2rem;
-   color: rgba(255, 255, 255, 0.6);
+   color: ${(props) =>
+      props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 1)'};
 `;
 
 export const Statistics = styled.section`
@@ -95,7 +99,8 @@ export const Statistics = styled.section`
    align-items: center;
    justify-content: space-between;
    gap: 0.5rem;
-   background-color: rgba(20, 28, 47, 1);
+   background-color: ${(props) =>
+      props.isDarkMode ? 'rgba(20, 28, 47, 1)' : 'rgba(220, 220, 220, 1)'};
    padding: 1.5rem;
    border-radius: 10px;
    margin-top: 2rem;
@@ -103,14 +108,16 @@ export const Statistics = styled.section`
 
 export const Repos = styled.div`
    h3 {
-      color: rgba(255, 255, 255, 0.6);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.9)'};
       font-size: 1.1rem;
       font-weight: 400;
       margin: 0.25rem 0;
    }
    h4 {
       margin: 0.25rem 0;
-      color: rgba(255, 255, 255, 1);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
@@ -119,14 +126,16 @@ export const Repos = styled.div`
 
 export const Followers = styled.div`
    h3 {
-      color: rgba(255, 255, 255, 0.6);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.)'};
       font-size: 1.1rem;
       font-weight: 400;
       margin: 0.25rem 0;
    }
    h4 {
       margin: 0.25rem 0;
-      color: rgba(255, 255, 255, 1);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
@@ -135,14 +144,16 @@ export const Followers = styled.div`
 
 export const Following = styled.div`
    h3 {
-      color: rgba(255, 255, 255, 0.6);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.)'};
       font-size: 1.1rem;
       font-weight: 400;
       margin: 0.25rem 0;
    }
    h4 {
       margin: 0.25rem 0;
-      color: rgba(255, 255, 255, 1);
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
@@ -179,12 +190,18 @@ export const Location = styled.div`
    opacity: ${(props) => (props.location ? 1 : 0.5)};
 
    h3 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-weight: 300;
       margin: 0.75rem;
    }
-   img {
+   svg {
       width: 25px;
+      height: 25px;
+      path {
+         fill: ${(props) =>
+            props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
+      }
    }
 `;
 export const Blog = styled.div`
@@ -194,12 +211,18 @@ export const Blog = styled.div`
    opacity: ${(props) => (props.blog ? 1 : 0.5)};
 
    h3 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-weight: 300;
       margin: 0.75rem;
    }
-   img {
+   svg {
       width: 25px;
+      height: 25px;
+      path {
+         fill: ${(props) =>
+            props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
+      }
    }
 `;
 export const Twitter = styled.div`
@@ -209,12 +232,18 @@ export const Twitter = styled.div`
    opacity: ${(props) => (props.twitter ? 1 : 0.5)};
 
    h3 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-weight: 300;
       margin: 0.75rem;
    }
-   img {
+   svg {
       width: 25px;
+      height: 25px;
+      path {
+         fill: ${(props) =>
+            props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
+      }
    }
 `;
 export const Company = styled.div`
@@ -224,12 +253,18 @@ export const Company = styled.div`
    opacity: ${(props) => (props.company ? 1 : 0.5)};
 
    h3 {
-      color: #fff;
+      color: ${(props) =>
+         props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       font-weight: 300;
       margin: 0.75rem;
    }
-   img {
+   svg {
       width: 25px;
+      height: 25px;
+      path {
+         fill: ${(props) =>
+            props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
+      }
    }
 `;
 

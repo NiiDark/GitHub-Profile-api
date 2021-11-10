@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormContainer, FormInput, FormIcon, FormBtn } from './Form.styles';
 
-function Form({ getSearchValue }) {
+function Form({ getSearchValue, isDarkMode }) {
    const [search, setsearch] = useState('');
 
    const handleSubmite = (e) => {
@@ -10,11 +10,12 @@ function Form({ getSearchValue }) {
       setsearch('');
    };
    return (
-      <FormContainer onSubmit={(e) => handleSubmite(e)}>
+      <FormContainer isDarkMode={isDarkMode} onSubmit={(e) => handleSubmite(e)}>
          <FormIcon>
             <img src="/search.svg" alt="search" />
          </FormIcon>
          <FormInput
+            isDarkMode={isDarkMode}
             type="text"
             placeholder="Search GitHub username..."
             value={search}
