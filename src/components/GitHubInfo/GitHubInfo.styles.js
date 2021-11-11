@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-// .parent {
-//     display: grid;
-//     grid-template-columns: repeat(12, 1fr);
-//     grid-template-rows: repeat(12, 1fr);
-//     grid-column-gap: 0px;
-//     grid-row-gap: 0px;
-//     }
-
-//     .div6 { grid-area: 10 / 5 / 13 / 13; }
-
 export const Wrapper = styled.main`
    border-radius: 10px;
    width: 96%;
@@ -82,7 +72,7 @@ export const Name = styled.div`
       color: ${(props) =>
          props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
       opacity: ${(props) => (props.isDarkMode ? '0.6' : '0.9')};
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 400;
       margin: 0.95rem 0;
    }
@@ -90,6 +80,7 @@ export const Name = styled.div`
 
 export const Bio = styled.p`
    margin-top: 2rem;
+   font-size: 1.1rem;
    color: ${(props) =>
       props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 1)'};
 `;
@@ -192,7 +183,8 @@ export const Location = styled.div`
    h3 {
       color: ${(props) =>
          props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1.1rem;
       margin: 0.75rem;
    }
    svg {
@@ -213,7 +205,8 @@ export const Blog = styled.div`
    h3 {
       color: ${(props) =>
          props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1.1rem;
       margin: 0.75rem;
    }
    svg {
@@ -234,7 +227,8 @@ export const Twitter = styled.div`
    h3 {
       color: ${(props) =>
          props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1.1rem;
       margin: 0.75rem;
    }
    svg {
@@ -255,7 +249,8 @@ export const Company = styled.div`
    h3 {
       color: ${(props) =>
          props.isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'};
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1.1rem;
       margin: 0.75rem;
    }
    svg {
