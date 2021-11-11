@@ -24,7 +24,7 @@ export const FormIcon = styled.div`
    margin: 0 0.5rem 0 1rem;
    img {
       width: 25px;
-      min-width: 25px;
+      height: 25px;
    }
 `;
 
