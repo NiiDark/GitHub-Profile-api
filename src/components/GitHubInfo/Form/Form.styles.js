@@ -43,9 +43,7 @@ export const FormInput = styled.input`
 
    &::placeholder {
       color: ${(props) =>
-         props.isDarkMode
-            ? 'rgba(255, 255, 255, 0.75)'
-            : 'rgba(0, 0, 0, 0.75)'};
+         props.isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)'};
    }
 `;
 
@@ -57,7 +55,7 @@ export const FormBtn = styled.button`
    font-family: 'Red Hat Mono';
    padding: 0.8rem;
    color: #fff;
-   background-color: rgba(1, 119, 254, 1);
+   background-color: rgba(0, 99, 212, 1);
    border: none;
    border-radius: 5px;
    transition: 200ms ease-in;
