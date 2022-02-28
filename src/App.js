@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import GitHubInfo from './components/GitHubInfo/GitHubInfo';
 import Header from './components/Header/Header';
+import useGaTracker from './hooks/useGaTracker';
 
 function App() {
+   useGaTracker();
    // const [pageLoading, setPageLoading] = useState(true);
    // window.onload = () => {
    //    setPageLoading(false);
