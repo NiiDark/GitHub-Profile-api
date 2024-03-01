@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import { FormContainer, FormInput, FormIcon, FormBtn } from './Form.styles';
+import { useState } from "react";
+import { FormContainer, FormInput, FormIcon, FormBtn } from "./Form.styles";
 
 function Form({ getSearchValue, isDarkMode }) {
-   const [search, setsearch] = useState('');
+  const [search, setSearch] = useState("");
 
-   const handleSubmite = (e) => {
-      e.preventDefault();
-      getSearchValue(search);
-      setsearch('');
-   };
-   return (
-      <FormContainer isDarkMode={isDarkMode} onSubmit={(e) => handleSubmite(e)}>
-         <FormIcon>
-            <img src="/search.svg" alt="search" />
-         </FormIcon>
-         <FormInput
-            isDarkMode={isDarkMode}
-            type="text"
-            placeholder="Search GitHub username..."
-            value={search}
-            onChange={(e) => setsearch(e.target.value)}
-         />
-         <FormBtn>Search</FormBtn>
-      </FormContainer>
-   );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getSearchValue(search);
+    setSearch("");
+  };
+  return (
+    <FormContainer isDarkMode={isDarkMode} onSubmit={(e) => handleSubmit(e)}>
+      <FormIcon>
+        <img src="/search.svg" alt="search" />
+      </FormIcon>
+      <FormInput
+        isDarkMode={isDarkMode}
+        type="text"
+        placeholder="Search GitHub username..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <FormBtn>Search</FormBtn>
+    </FormContainer>
+  );
 }
 
 export default Form;
